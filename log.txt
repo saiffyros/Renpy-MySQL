@@ -1,13 +1,13 @@
-Mon Jun 24 23:16:08 2019
+Wed Jun 26 20:57:24 2019
 Windows-8-6.2.9200
 Ren'Py 7.3.0.271
  
 
-Bootstrap to the start of init.init took 0.04s
+Bootstrap to the start of init.init took 0.05s
 Early init took 0.00s
 Loader init took 0.01s
-Loading error handling took 0.01s
-Loading script took 0.09s
+Loading error handling took 0.02s
+Loading script took 0.07s
 Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
@@ -15,8 +15,7 @@ Running init code took 0.05s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rodri\\AppData\\Roaming/RenPy/backups\\MySQLTest':
-Dump and make backups. took 0.04s
+Dump and make backups. took 0.03s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.01s
@@ -25,12 +24,12 @@ Creating interface object took 0.03s
 Cleaning stores took 0.00s
 Init translation took 0.01s
 Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.04s
+Load screen analysis took 0.01s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
 Prepare screens took 0.04s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.04s
+Save bytecode. took 0.00s
 Running _start took 0.00s
 Performance test:
 Interface start took 0.01s
@@ -442,51 +441,34 @@ Texture testing:
 - 2048px textures work.
 FBO Maximum Texture Size: 32768
 Root FBO is: 0
-Total time until interface ready: 0.97200012207s
+Total time until interface ready: 0.844000101089s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.017667 seconds.
-- Frame drawn at 0.017667 seconds.
-- Frame drawn at 0.027667 seconds.
+- Frame drawn at 0.018667 seconds.
+- Frame drawn at 0.018667 seconds.
+- Frame drawn at 0.026667 seconds.
 - Frame drawn at 0.044667 seconds.
 - 0.044667 seconds to render 5 frames.
-send: u'POST /action_login4.php HTTP/1.1\r\nAccept-Encoding: identity\r\nContent-Length: 49\r\nHost: ec2-18-224-67-146.us-east-2.compute.amazonaws.com\r\nContent-Type: application/x-www-form-urlencoded\r\nConnection: close\r\nUser-Agent: Python-urllib/2.7\r\n\r\npassword=pasosososososos&email=userrrrrrrrrrrrrrr'
-reply: 'HTTP/1.1 200 OK\r\n'
-header: Date: Tue, 25 Jun 2019 02:16:20 GMT
-header: Server: Apache/2.4.39 () OpenSSL/1.0.2k-fips PHP/5.4.16
-header: Upgrade: h2,h2c
-header: Connection: Upgrade, close
-header: X-Powered-By: PHP/5.4.16
-header: Content-Length: 65
-header: Content-Type: application/json
-{"success":false "error":"Invalid email or password." "email":""}
-send: u'POST /action_login4.php HTTP/1.1\r\nAccept-Encoding: identity\r\nContent-Length: 49\r\nHost: ec2-18-224-67-146.us-east-2.compute.amazonaws.com\r\nContent-Type: application/x-www-form-urlencoded\r\nConnection: close\r\nUser-Agent: Python-urllib/2.7\r\n\r\npassword=pasosososososos&email=userrrrrrrrrrrrrrr'
-reply: 'HTTP/1.1 200 OK\r\n'
-header: Date: Tue, 25 Jun 2019 02:16:21 GMT
-header: Server: Apache/2.4.39 () OpenSSL/1.0.2k-fips PHP/5.4.16
-header: Upgrade: h2,h2c
-header: Connection: Upgrade, close
-header: X-Powered-By: PHP/5.4.16
-header: Content-Length: 65
-header: Content-Type: application/json
-False
-send: u'POST /action_login4.php HTTP/1.1\r\nAccept-Encoding: identity\r\nContent-Length: 18\r\nHost: ec2-18-224-67-146.us-east-2.compute.amazonaws.com\r\nContent-Type: application/x-www-form-urlencoded\r\nConnection: close\r\nUser-Agent: Python-urllib/2.7\r\n\r\npassword=e&email=e'
-reply: 'HTTP/1.1 200 OK\r\n'
-header: Date: Tue, 25 Jun 2019 02:16:32 GMT
-header: Server: Apache/2.4.39 () OpenSSL/1.0.2k-fips PHP/5.4.16
-header: Upgrade: h2,h2c
-header: Connection: Upgrade, close
-header: X-Powered-By: PHP/5.4.16
-header: Content-Length: 65
-header: Content-Type: application/json
-{"success":false "error":"Invalid email or password." "email":""}
-send: u'POST /action_login4.php HTTP/1.1\r\nAccept-Encoding: identity\r\nContent-Length: 18\r\nHost: ec2-18-224-67-146.us-east-2.compute.amazonaws.com\r\nContent-Type: application/x-www-form-urlencoded\r\nConnection: close\r\nUser-Agent: Python-urllib/2.7\r\n\r\npassword=e&email=e'
-reply: 'HTTP/1.1 200 OK\r\n'
-header: Date: Tue, 25 Jun 2019 02:16:33 GMT
-header: Server: Apache/2.4.39 () OpenSSL/1.0.2k-fips PHP/5.4.16
-header: Upgrade: h2,h2c
-header: Connection: Upgrade, close
-header: X-Powered-By: PHP/5.4.16
-header: Content-Length: 65
-header: Content-Type: application/json
-False
+
+Full traceback:
+  File "game/script.rpy", line 15, in script
+    python:
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\ast.py", line 912, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\python.py", line 1959, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/script.rpy", line 31, in <module>
+    userList = str(opener.open(url, data=data).read()).split(",")
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/urllib2.py", line 431, in open
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/urllib2.py", line 449, in _open
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/urllib2.py", line 409, in _call_chain
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/urllib2.py", line 1240, in https_open
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/urllib2.py", line 1197, in do_open
+URLError: <urlopen error [Errno 10061] No connection could be made because the target machine actively refused it>
+
+While running game code:
+  File "game/script.rpy", line 15, in script
+    python:
+  File "game/script.rpy", line 31, in <module>
+    userList = str(opener.open(url, data=data).read()).split(",")
+URLError: <urlopen error [Errno 10061] No connection could be made because the target machine actively refused it>

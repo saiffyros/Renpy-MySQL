@@ -3,9 +3,9 @@
 While running game code:
   File "game/script.rpy", line 15, in script
     python:
-  File "game/script.rpy", line 41, in <module>
-    renpy.say(e, y["success"])
-TypeError: unsupported operand type(s) for %: 'bool' and 'TagQuotingDict'
+  File "game/script.rpy", line 31, in <module>
+    userList = str(opener.open(url, data=data).read()).split(",")
+URLError: <urlopen error [Errno 10061] No connection could be made because the target machine actively refused it>
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -16,13 +16,16 @@ Full traceback:
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\python.py", line 1959, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/script.rpy", line 41, in <module>
-    renpy.say(e, y["success"])
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\exports.py", line 1325, in say
-    what = what % tag_quoting_dict
-TypeError: unsupported operand type(s) for %: 'bool' and 'TagQuotingDict'
+  File "game/script.rpy", line 31, in <module>
+    userList = str(opener.open(url, data=data).read()).split(",")
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/urllib2.py", line 431, in open
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/urllib2.py", line 449, in _open
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/urllib2.py", line 409, in _call_chain
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/urllib2.py", line 1240, in https_open
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/urllib2.py", line 1197, in do_open
+URLError: <urlopen error [Errno 10061] No connection could be made because the target machine actively refused it>
 
 Windows-8-6.2.9200
 Ren'Py 7.3.0.271
 MySQLTest 1.0
-Mon Jun 24 23:11:08 2019
+Wed Jun 26 20:57:38 2019

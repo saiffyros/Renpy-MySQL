@@ -23,7 +23,8 @@ label start:
         import urllib
         import urllib2
 
-        url = "http://ec2-18-224-67-146.us-east-2.compute.amazonaws.com/action_login4.php"
+        #url = "http://ec2-18-224-67-146.us-east-2.compute.amazonaws.com/action_login4.php"
+        url = "https://ec2-3-17-178-237.us-east-2.compute.amazonaws.com/action_login4.php"
         opener = urllib2.build_opener(urllib2.HTTPHandler(debuglevel=1))
         data = urllib.urlencode({'email' : email,
                                 'password'  : password})
