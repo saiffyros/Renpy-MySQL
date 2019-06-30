@@ -5,7 +5,7 @@ While running game code:
     python:
   File "game/script.rpy", line 31, in <module>
     userList = str(opener.open(url, data=data).read()).split(",")
-URLError: <urlopen error [Errno 10061] No connection could be made because the target machine actively refused it>
+URLError: <urlopen error [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -21,11 +21,11 @@ Full traceback:
   File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/urllib2.py", line 431, in open
   File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/urllib2.py", line 449, in _open
   File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/urllib2.py", line 409, in _call_chain
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/urllib2.py", line 1240, in https_open
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/urllib2.py", line 1227, in http_open
   File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/urllib2.py", line 1197, in do_open
-URLError: <urlopen error [Errno 10061] No connection could be made because the target machine actively refused it>
+URLError: <urlopen error [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
 
 Windows-8-6.2.9200
 Ren'Py 7.3.0.271
 MySQLTest 1.0
-Wed Jun 26 20:57:38 2019
+Sun Jun 30 00:25:24 2019
