@@ -1,31 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 15, in script
+  File "game/script.rpy", line 58, in script
     python:
-  File "game/script.rpy", line 31, in <module>
-    userList = str(opener.open(url, data=data).read()).split(",")
-URLError: <urlopen error [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+  File "game/script.rpy", line 60, in <module>
+    opener = urllib2.build_opener(urllib2.HTTPHandler(debuglevel=1))
+NameError: name 'urllib2' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 15, in script
+  File "game/script.rpy", line 58, in script
     python:
   File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\ast.py", line 912, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\python.py", line 1959, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/script.rpy", line 31, in <module>
-    userList = str(opener.open(url, data=data).read()).split(",")
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/urllib2.py", line 431, in open
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/urllib2.py", line 449, in _open
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/urllib2.py", line 409, in _call_chain
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/urllib2.py", line 1227, in http_open
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/urllib2.py", line 1197, in do_open
-URLError: <urlopen error [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+  File "game/script.rpy", line 60, in <module>
+    opener = urllib2.build_opener(urllib2.HTTPHandler(debuglevel=1))
+NameError: name 'urllib2' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.0.271
 MySQLTest 1.0
-Sun Jun 30 00:25:24 2019
+Mon Jul 08 17:03:29 2019

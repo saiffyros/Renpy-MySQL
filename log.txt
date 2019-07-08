@@ -1,13 +1,13 @@
-Sun Jun 30 00:32:06 2019
+Mon Jul 08 17:44:14 2019
 Windows-8-6.2.9200
 Ren'Py 7.3.0.271
  
 
-Bootstrap to the start of init.init took 0.05s
+Bootstrap to the start of init.init took 0.04s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.01s
-Loading script took 0.10s
+Loading script took 0.09s
 Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
@@ -442,17 +442,17 @@ Texture testing:
 - 2048px textures work.
 FBO Maximum Texture Size: 32768
 Root FBO is: 0
-Total time until interface ready: 1.06900000572s
+Total time until interface ready: 0.944000005722s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.017667 seconds.
 - Frame drawn at 0.018667 seconds.
-- Frame drawn at 0.027667 seconds.
-- Frame drawn at 0.044667 seconds.
-- 0.044667 seconds to render 5 frames.
+- Frame drawn at 0.018667 seconds.
+- Frame drawn at 0.024667 seconds.
+- Frame drawn at 0.041667 seconds.
+- 0.041667 seconds to render 5 frames.
 send: u'POST /action_login.php HTTP/1.1\r\nAccept-Encoding: identity\r\nContent-Length: 40\r\nHost: ec2-3-18-214-161.us-east-2.compute.amazonaws.com\r\nContent-Type: application/x-www-form-urlencoded\r\nConnection: close\r\nUser-Agent: Python-urllib/2.7\r\n\r\npassword=password&email=user1%40test.com'
 reply: 'HTTP/1.1 200 OK\r\n'
-header: Date: Sun, 30 Jun 2019 03:32:18 GMT
+header: Date: Mon, 08 Jul 2019 20:44:28 GMT
 header: Server: Apache/2.4.39 (Amazon) PHP/7.0.33
 header: X-Powered-By: PHP/7.0.33
 header: Content-Length: 52
@@ -461,10 +461,15 @@ header: Content-Type: application/json
 {"success":true "error":"" "email":"user1@test.com"}
 send: u'POST /action_login.php HTTP/1.1\r\nAccept-Encoding: identity\r\nContent-Length: 40\r\nHost: ec2-3-18-214-161.us-east-2.compute.amazonaws.com\r\nContent-Type: application/x-www-form-urlencoded\r\nConnection: close\r\nUser-Agent: Python-urllib/2.7\r\n\r\npassword=password&email=user1%40test.com'
 reply: 'HTTP/1.1 200 OK\r\n'
-header: Date: Sun, 30 Jun 2019 03:32:18 GMT
+header: Date: Mon, 08 Jul 2019 20:44:28 GMT
 header: Server: Apache/2.4.39 (Amazon) PHP/7.0.33
 header: X-Powered-By: PHP/7.0.33
 header: Content-Length: 52
 header: Connection: close
 header: Content-Type: application/json
 True
+send: u'GET /message HTTP/1.1\r\nAccept-Encoding: identity\r\nHost: ec2-3-18-214-161.us-east-2.compute.amazonaws.com:3000\r\nConnection: close\r\nUser-Agent: Python-urllib/2.7\r\n\r\n'
+reply: 'HTTP/1.1 200 OK\r\n'
+header: Date: Mon, 08 Jul 2019 20:44:33 GMT
+header: Connection: close
+header: Transfer-Encoding: chunked
