@@ -5,6 +5,8 @@ label start:
 
     scene bg room
 
+    e "Do you wanna log into your account?"
+
     menu:
         "Try your email":
             python:
@@ -50,9 +52,8 @@ label start:
 
     show eileen happy
 
-    e "You've created a new Ren'Py game."
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    e "Ok, Let's check your connection."
+    e "Make sure you're connect to the wifi or mobile data."
 
     python:
         try:
@@ -61,6 +62,7 @@ label start:
             opener = urllib2.build_opener(urllib2.HTTPHandler(debuglevel=1))
 
             userList2 = str(opener.open(url).read())
+
         except:
             userList2 = "We couldn't connect to the internet."
 
