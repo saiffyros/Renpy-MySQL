@@ -69,6 +69,22 @@ label start:
 
     e "[userList2]"
 
-    e "Bye."
+    e "Let's try the Requests module now."
+
+    init python:
+        import requests
+        try:
+            url = "http://ec2-3-18-214-161.us-east-2.compute.amazonaws.com:3000/message"
+            data = requests.get(url)
+        except:
+            data = "Connection failed."
+
+    e "Let's see:"
+    e "[data]"
+    e "All set :-)"
+    e "Bye"
+
+
+
 
     return

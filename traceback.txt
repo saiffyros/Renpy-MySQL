@@ -1,26 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 58, in script
-    python:
-  File "game/script.rpy", line 60, in <module>
-    opener = urllib2.build_opener(urllib2.HTTPHandler(debuglevel=1))
-NameError: name 'urllib2' is not defined
+  File "game/script.rpy", line 74, in script
+    init python:
+  File "game/script.rpy", line 75, in <module>
+    import requests
+ImportError: No module named idna
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 58, in script
-    python:
+  File "game/script.rpy", line 74, in script
+    init python:
   File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\ast.py", line 912, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\python.py", line 1959, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/script.rpy", line 60, in <module>
-    opener = urllib2.build_opener(urllib2.HTTPHandler(debuglevel=1))
-NameError: name 'urllib2' is not defined
+  File "game/script.rpy", line 75, in <module>
+    import requests
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\loader.py", line 745, in load_module
+    exec code in mod.__dict__
+  File "requests/__init__.py", line 113, in <module>
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\loader.py", line 745, in load_module
+    exec code in mod.__dict__
+  File "requests/packages.py", line 7, in <module>
+ImportError: No module named idna
 
 Windows-8-6.2.9200
 Ren'Py 7.3.0.271
 MySQLTest 1.0
-Mon Jul 08 17:03:29 2019
+Tue Jul 16 20:13:10 2019
