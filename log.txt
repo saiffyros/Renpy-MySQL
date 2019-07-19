@@ -1,27 +1,27 @@
-Tue Jul 16 20:15:13 2019
+Fri Jul 19 00:41:26 2019
 Windows-8-6.2.9200
 Ren'Py 7.3.0.271
  
 
 Bootstrap to the start of init.init took 0.04s
 Early init took 0.00s
-Loader init took 0.01s
+Loader init took 0.02s
 Loading error handling took 0.01s
 Loading script took 0.10s
 Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 1.02s
+Running init code took 1.03s
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\rodri\\AppData\\Roaming/RenPy/backups\\MySQLTest':
-Dump and make backups. took 0.04s
+Dump and make backups. took 0.03s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.01s
 DPI scale factor: 1.000000
-Creating interface object took 0.03s
+Creating interface object took 0.04s
 Cleaning stores took 0.00s
 Init translation took 0.01s
 Build styles took 0.00s
@@ -441,12 +441,13 @@ Texture testing:
 - 2048px textures work.
 FBO Maximum Texture Size: 32768
 Root FBO is: 0
-Total time until interface ready: 1.90799999237s
+Total time until interface ready: 1.92600011826s
 send: u'GET /message HTTP/1.1\r\nAccept-Encoding: identity\r\nHost: ec2-3-18-214-161.us-east-2.compute.amazonaws.com:3000\r\nConnection: close\r\nUser-Agent: Python-urllib/2.7\r\n\r\n'
 reply: 'HTTP/1.1 200 OK\r\n'
-header: Date: Tue, 16 Jul 2019 23:15:19 GMT
+header: Date: Fri, 19 Jul 2019 03:41:31 GMT
 header: Connection: close
 header: Transfer-Encoding: chunked
+{u'picture': u'http://api.deezer.com/user/2529/image', u'name': u'dadbond', u'picture_medium': u'http://cdn-images.deezer.com/images/user/35b2a990ccc09d4d0e90390484d221e3/250x250-000000-80-0-0.jpg', u'country': u'FR', u'picture_small': u'http://cdn-images.deezer.com/images/user/35b2a990ccc09d4d0e90390484d221e3/56x56-000000-80-0-0.jpg', u'link': u'http://www.deezer.com/profile/2529', u'type': u'user', u'picture_xl': u'http://cdn-images.deezer.com/images/user/35b2a990ccc09d4d0e90390484d221e3/1000x1000-000000-80-0-0.jpg', u'tracklist': u'http://api.deezer.com/user/2529/flow', u'id': 2529, u'picture_big': u'http://cdn-images.deezer.com/images/user/35b2a990ccc09d4d0e90390484d221e3/500x500-000000-80-0-0.jpg'}
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s

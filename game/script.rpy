@@ -3,6 +3,8 @@ define e = Character("Eileen")
 
 label start:
 
+    $ data2 = "test"
+
     scene bg room
 
     e "Do you wanna log into your account?"
@@ -66,7 +68,6 @@ label start:
         except:
             userList2 = "We couldn't connect to the internet."
 
-
     e "[userList2]"
 
     e "Let's try the Requests module now."
@@ -81,10 +82,35 @@ label start:
 
     e "Let's see:"
     e "[data]"
-    e "All set :-)"
+    e "Let's try an API now."
+    e "Do you like music?"
+    e "What is a singer you like?"
+    $ singer = renpy.input("type singer's name")
+    e "Singer name is [singer]"
+    python:
+        urlDeezer = "http://api.deezer.com/user/2529"
+        try:
+            songsDeezer = requests.get(urlDeezer)
+            data2 = songsDeezer.json()
+            print(data2)
+        except:
+            songsDeezer = "It didn't work"
+
+    show screen windowTest
+    pause 5.0
     e "Bye"
 
-
-
-
     return
+
+screen windowTest:
+    #$ data2 = {'name' : "Rodrigo", 'age' : 15}
+    frame:
+        style "file_picker_frame"
+        viewport:
+            scrollbars "vertical"
+            xmaximum 400
+            mousewheel True
+            has vbox
+
+            for i in data2:
+                text i

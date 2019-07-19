@@ -2,10 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 33: invalid syntax
-    e "this is [userlist]"
-                          ^
+File "game/script.rpy", line 116: invalid syntax
+        text i
+              ^
     
 
 Ren'Py Version: Ren'Py 7.3.0.271
-Mon Jun 24 22:41:40 2019
+Fri Jul 19 00:41:12 2019
