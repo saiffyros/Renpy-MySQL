@@ -1,4 +1,4 @@
-Fri Jul 19 00:41:26 2019
+Sun Aug 04 02:45:48 2019
 Windows-8-6.2.9200
 Ren'Py 7.3.0.271
  
@@ -11,7 +11,7 @@ Loading script took 0.10s
 Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 1.03s
+Running init code took 0.32s
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
@@ -29,8 +29,8 @@ Load screen analysis took 0.00s
 Analyze screens took 0.01s
 Save screen analysis took 0.04s
 Prepare screens took 0.04s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.04s
+Save pyanalysis. took 0.06s
+Save bytecode. took 0.05s
 Running _start took 0.00s
 Interface start took 0.02s
 
@@ -40,7 +40,7 @@ Windowed mode.
 Screen sizes: virtual=(1280, 720) physical=(1184, 666) drawable=(1184, 666)
 Vendor: 'NVIDIA Corporation'
 Renderer: 'GeForce GTX 1060 6GB/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 431.36'
+Version: '4.6.0 NVIDIA 431.60'
 Display Info: <Info({'blit_sw_CC': False, 'refresh_rate': 60, 'bitsize': 32, 'wm': True, 'losses': (0, 0, 0, 8), 'hw': False, 'masks': (16711680L, 65280L, 255L, 0L), 'current_h': 768, 'current_w': 1366, 'shifts': (16, 8, 0, 0), 'blit_sw_A': False, 'blit_hw': False, 'blit_sw': False, 'bytesize': 4, 'blit_hw_CC': False, 'blit_hw_A': False, 'video_mem': 268435456})>
 Fixed-function is blacklisted.
 Extensions:
@@ -441,17 +441,16 @@ Texture testing:
 - 2048px textures work.
 FBO Maximum Texture Size: 32768
 Root FBO is: 0
-Total time until interface ready: 1.92600011826s
+Total time until interface ready: 1.30599999428s
 send: u'GET /message HTTP/1.1\r\nAccept-Encoding: identity\r\nHost: ec2-3-18-214-161.us-east-2.compute.amazonaws.com:3000\r\nConnection: close\r\nUser-Agent: Python-urllib/2.7\r\n\r\n'
 reply: 'HTTP/1.1 200 OK\r\n'
-header: Date: Fri, 19 Jul 2019 03:41:31 GMT
+header: Date: Sun, 04 Aug 2019 05:45:54 GMT
 header: Connection: close
 header: Transfer-Encoding: chunked
-{u'picture': u'http://api.deezer.com/user/2529/image', u'name': u'dadbond', u'picture_medium': u'http://cdn-images.deezer.com/images/user/35b2a990ccc09d4d0e90390484d221e3/250x250-000000-80-0-0.jpg', u'country': u'FR', u'picture_small': u'http://cdn-images.deezer.com/images/user/35b2a990ccc09d4d0e90390484d221e3/56x56-000000-80-0-0.jpg', u'link': u'http://www.deezer.com/profile/2529', u'type': u'user', u'picture_xl': u'http://cdn-images.deezer.com/images/user/35b2a990ccc09d4d0e90390484d221e3/1000x1000-000000-80-0-0.jpg', u'tracklist': u'http://api.deezer.com/user/2529/flow', u'id': 2529, u'picture_big': u'http://cdn-images.deezer.com/images/user/35b2a990ccc09d4d0e90390484d221e3/500x500-000000-80-0-0.jpg'}
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.01s
+Load screen analysis took 0.02s
 Analyze screens took 0.00s
 Prepare screens took 0.00s
 Running _start took 0.00s

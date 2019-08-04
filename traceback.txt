@@ -1,30 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 100, in script
+  File "game/script.rpy", line 97, in script
     pause 5.0
   File "renpy/common/000statements.rpy", line 414, in execute_pause
     renpy.with_statement(Pause(delay))
-  File "game/script.rpy", line 105, in execute
-    screen windowTest:
-  File "game/script.rpy", line 105, in execute
-    screen windowTest:
-  File "game/script.rpy", line 107, in execute
+  File "game/script.rpy", line 126, in execute
+    screen windowTest2:
+  File "game/script.rpy", line 126, in execute
+    screen windowTest2:
+  File "game/script.rpy", line 127, in execute
     frame:
-  File "game/script.rpy", line 109, in execute
-    viewport:
-  File "game/script.rpy", line 113, in execute
-    has vbox
-  File "game/script.rpy", line 114, in execute
+  File "game/script.rpy", line 128, in execute
     python:
-  File "game/script.rpy", line 115, in <module>
-    for i in data2["data"]:
-KeyError: u'data'
+  File "game/script.rpy", line 130, in <module>
+    musicT = requests.get("https://api.deezer.com/artist/27/top?limit=50")
+IOError: Could not find a suitable TLS CA certificate bundle, invalid path: certifi\cacert.pem
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 100, in script
+  File "game/script.rpy", line 97, in script
     pause 5.0
   File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\ast.py", line 1947, in execute
     self.call("execute")
@@ -58,23 +54,25 @@ Full traceback:
     self.update()
   File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\screen.py", line 625, in update
     self.screen.function(**self.scope)
-  File "game/script.rpy", line 105, in execute
-    screen windowTest:
-  File "game/script.rpy", line 105, in execute
-    screen windowTest:
-  File "game/script.rpy", line 107, in execute
+  File "game/script.rpy", line 126, in execute
+    screen windowTest2:
+  File "game/script.rpy", line 126, in execute
+    screen windowTest2:
+  File "game/script.rpy", line 127, in execute
     frame:
-  File "game/script.rpy", line 109, in execute
-    viewport:
-  File "game/script.rpy", line 113, in execute
-    has vbox
-  File "game/script.rpy", line 114, in execute
+  File "game/script.rpy", line 128, in execute
     python:
-  File "game/script.rpy", line 115, in <module>
-    for i in data2["data"]:
-KeyError: u'data'
+  File "game/script.rpy", line 130, in <module>
+    musicT = requests.get("https://api.deezer.com/artist/27/top?limit=50")
+  File "requests/api.py", line 75, in get
+  File "requests/api.py", line 60, in request
+  File "requests/sessions.py", line 533, in request
+  File "requests/sessions.py", line 646, in send
+  File "requests/adapters.py", line 416, in send
+  File "requests/adapters.py", line 228, in cert_verify
+IOError: Could not find a suitable TLS CA certificate bundle, invalid path: certifi\cacert.pem
 
 Windows-8-6.2.9200
 Ren'Py 7.3.0.271
 MySQLTest 1.0
-Fri Jul 19 00:40:54 2019
+Sun Aug 04 02:27:26 2019
