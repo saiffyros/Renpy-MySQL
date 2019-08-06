@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 128: u'init' is not a keyword argument or valid child for the frame statement.
-    init python:
-        ^
+File "game/script.rpy", line 190: expected an indented block
+    except:
+    
 
 Ren'Py Version: Ren'Py 7.3.0.271
-Sun Aug 04 02:19:25 2019
+Mon Aug 05 18:49:27 2019

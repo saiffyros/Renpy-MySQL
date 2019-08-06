@@ -1,78 +1,20 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 97, in script
-    pause 5.0
-  File "renpy/common/000statements.rpy", line 414, in execute_pause
-    renpy.with_statement(Pause(delay))
-  File "game/script.rpy", line 126, in execute
-    screen windowTest2:
-  File "game/script.rpy", line 126, in execute
-    screen windowTest2:
-  File "game/script.rpy", line 127, in execute
-    frame:
-  File "game/script.rpy", line 128, in execute
-    python:
-  File "game/script.rpy", line 130, in <module>
-    musicT = requests.get("https://api.deezer.com/artist/27/top?limit=50")
-IOError: Could not find a suitable TLS CA certificate bundle, invalid path: certifi\cacert.pem
+  File "game/script.rpy", line 124, in script
+    e "it didn't work"
+Exception: Possible infinite loop.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 97, in script
-    pause 5.0
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\ast.py", line 1947, in execute
-    self.call("execute")
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\ast.py", line 1935, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\statements.py", line 277, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 414, in execute_pause
-    renpy.with_statement(Pause(delay))
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\exports.py", line 1592, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 2250, in do_with
-    clear=clear)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 2701, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 3093, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\screen.py", line 430, in visit_all
-    callback(self)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 3093, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\screen.py", line 440, in per_interact
-    self.update()
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\screen.py", line 625, in update
-    self.screen.function(**self.scope)
-  File "game/script.rpy", line 126, in execute
-    screen windowTest2:
-  File "game/script.rpy", line 126, in execute
-    screen windowTest2:
-  File "game/script.rpy", line 127, in execute
-    frame:
-  File "game/script.rpy", line 128, in execute
-    python:
-  File "game/script.rpy", line 130, in <module>
-    musicT = requests.get("https://api.deezer.com/artist/27/top?limit=50")
-  File "requests/api.py", line 75, in get
-  File "requests/api.py", line 60, in request
-  File "requests/sessions.py", line 533, in request
-  File "requests/sessions.py", line 646, in send
-  File "requests/adapters.py", line 416, in send
-  File "requests/adapters.py", line 228, in cert_verify
-IOError: Could not find a suitable TLS CA certificate bundle, invalid path: certifi\cacert.pem
+  File "game/script.rpy", line 124, in script
+    e "it didn't work"
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\execution.py", line 59, in check_infinite_loop
+    raise Exception("Possible infinite loop.")
+Exception: Possible infinite loop.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.0.271
 MySQLTest 1.0
-Sun Aug 04 02:27:26 2019
+Mon Aug 05 18:47:37 2019

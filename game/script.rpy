@@ -6,6 +6,8 @@ init python:
     import urllib2
     import requests
     import json
+    import urllib2
+    import os
 
 label start:
 
@@ -95,11 +97,52 @@ label start:
     $ Murl = renpy.input("type the name of the artist/band")
     show screen windowTest2
     pause 5.0
-    e "Well, that's it for today."
-    e "I hope you had fun"
+    e "Here are the songs."
+    e "I hope it worked."
     hide screen windowTest2
+    e "Last test now."
+    e "Let's try and connect to NASA once again."
+
+    python:
+        try:
+            resp2 = requests.get("https://api.nasa.gov/planetary/apod?api_key=DKkIVysTrVNs2wj5egA301FCy4fcFn6dM4J7oP0j")
+            resp = resp2.json()
+
+            title1 = resp["title"]
+            explanation1 = resp["explanation"]
+
+            # url = "https://apod.nasa.gov/apod/image/1908/DoubleEclipse_Legault_1080.jpg"
+            # openurl = urllib2.build_opener()
+            # page1 = openurl.open(url)
+            # pic = page1.read()
+            # filename = os.path.join(config.gamedir, ("image12344.png"))
+            # fout = open(filename, "wb")
+            # fout.write(pic)
+            # fout.close()
+        except:
+            title1 = "it didn't work"
+            explanation1 = "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+
+    show screen nasaPic
+    pause 5.0
+    e "testing"
+
+    #e "Let's try to send an email."
+    #$ emailT = renpy.input("Type the person's email")
+    #e "What is the subject?"
+    #$ subjectT = renpy.input("Type the subject")
+    #e "What is the message?"
+    #$ messageT = renpy.input("Type the message")
+    #e "Ok, I'll try to send."
+    e "Well, that's it for today."
+    e "I hope you had fun."
     e "Bye"
 
+    return
+
+label finall:
+    e "it didn't work"
+    e "bye"
     return
 
 screen windowTest:
@@ -145,3 +188,19 @@ screen windowTest2:
             has vbox
             for i in data2T["data"]:
                 text i["title_short"]
+
+screen nasaPic:
+
+            #ui.close()
+            #renpy.hide_screen("nasaPic")
+            #renpy.jump("finall")
+
+    text title1:
+        xalign 0.5
+        yalign 0.2
+    #add "image12344.png":
+        #xalign 0.5
+        #yalign 0.5
+    text explanation1:
+        xalign 0.5
+        yalign 0.6
