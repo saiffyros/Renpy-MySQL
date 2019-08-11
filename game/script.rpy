@@ -8,11 +8,11 @@ init python:
     import json
     import os
 
-    def downloadImage(url):
+    def downloadImage(url, imageName):
         openurl = urllib2.build_opener()
         page1 = openurl.open(url)
         pic = page1.read()
-        filename = os.path.join(config.gamedir, ("image1234.png"))    # Might as well just make sure you know the file extension.
+        filename = os.path.join(config.gamedir, (imageName))    # Might as well just make sure you know the file extension.
         fout = open(filename, "wb")
         fout.write(pic)
         fout.close()
@@ -118,7 +118,7 @@ label start:
             resp2 = urllib.urlopen(url2)
             resp = json.loads(resp2.read())
 
-            downloadImage(resp["url"])
+            downloadImage(resp["url"], "image1234.png")
 
             title1 = resp["title"]
             explanation1 = resp["explanation"]
