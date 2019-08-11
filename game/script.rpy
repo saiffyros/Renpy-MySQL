@@ -163,14 +163,22 @@ screen windowTest2:
     frame:
         python:
             try:
-                testing = requests.get("http://api.deezer.com/artist/" + Murl)
-                testingData = testing.json()
-                idd = testingData["id"]
+                # testing = requests.get("http://api.deezer.com/artist/" + Murl)
+                # testingData = testing.json()
+                # idd = testingData["id"]
+                #
+                # urlM = "http://api.deezer.com//artist//" + str(idd) + "//top?limit=50"
+                #
+                # musicT = requests.get(urlM)
+                #
+                # data2T = musicT.json()
 
-                urlM = "http://api.deezer.com//artist//" + str(idd) + "//top?limit=50"
+                url = "https://api.deezer.com/search?q=" + Murl
+                testingData = urllib.urlopen(url)
+                testingData2 = testingData.read()
 
-                musicT = requests.get(urlM)
-                data2T = musicT.json()
+                data2T = json.loads(testingData2)
+
             except:
                 data2T = {"data": [{"title_short": "Not connected"}, {"title_short": "to the internet"}]}
         style "file_picker_frame"

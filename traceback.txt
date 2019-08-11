@@ -1,16 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <'Image' u'image1234.png'>:
-  File "game/script.rpy", line 130, in script
+While running game code:
+  File "game/script.rpy", line 109, in script
     pause 5.0
   File "renpy/common/000statements.rpy", line 414, in execute_pause
     renpy.with_statement(Pause(delay))
-IOError: Couldn't find file 'image1234.png'.
+  File "game/script.rpy", line 162, in execute
+    screen windowTest2:
+  File "game/script.rpy", line 162, in execute
+    screen windowTest2:
+  File "game/script.rpy", line 163, in execute
+    frame:
+  File "game/script.rpy", line 186, in execute
+    viewport:
+  File "game/script.rpy", line 190, in execute
+    has vbox
+  File "game/script.rpy", line 191, in execute
+    for i in data2T:#["data"]:
+  File "game/script.rpy", line 192, in execute
+    text i["title"]
+TypeError: string indices must be integers
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 130, in script
+  File "game/script.rpy", line 109, in script
     pause 5.0
   File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\ast.py", line 1947, in execute
     self.call("execute")
@@ -26,51 +40,42 @@ Full traceback:
     clear=clear)
   File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 2699, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 3191, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 2091, in draw_screen
-    renpy.config.screen_height,
-  File "render.pyx", line 546, in renpy.display.render.render_screen
-  File "render.pyx", line 247, in renpy.display.render.render
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\layout.py", line 722, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 154, in renpy.display.render.render
-  File "render.pyx", line 247, in renpy.display.render.render
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\transition.py", line 87, in render
-    return null_render(self, width, height, st, at)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\transition.py", line 61, in null_render
-    st, at)
-  File "render.pyx", line 154, in renpy.display.render.render
-  File "render.pyx", line 247, in renpy.display.render.render
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\layout.py", line 722, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 154, in renpy.display.render.render
-  File "render.pyx", line 247, in renpy.display.render.render
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\layout.py", line 722, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 154, in renpy.display.render.render
-  File "render.pyx", line 247, in renpy.display.render.render
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\screen.py", line 675, in render
-    child = renpy.display.render.render(self.child, w, h, st, at)
-  File "render.pyx", line 154, in renpy.display.render.render
-  File "render.pyx", line 247, in renpy.display.render.render
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\layout.py", line 722, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 154, in renpy.display.render.render
-  File "render.pyx", line 247, in renpy.display.render.render
-  File "accelerator.pyx", line 110, in renpy.display.accelerator.transform_render
-  File "render.pyx", line 247, in renpy.display.render.render
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\im.py", line 584, in render
-    return cache.get(self, render=True)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\im.py", line 266, in get
-    surf = image.load()
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\im.py", line 629, in load
-    surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\loader.py", line 576, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'image1234.png'.
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 3091, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\screen.py", line 430, in visit_all
+    callback(self)
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\core.py", line 3091, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\screen.py", line 440, in per_interact
+    self.update()
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\display\screen.py", line 625, in update
+    self.screen.function(**self.scope)
+  File "game/script.rpy", line 162, in execute
+    screen windowTest2:
+  File "game/script.rpy", line 162, in execute
+    screen windowTest2:
+  File "game/script.rpy", line 163, in execute
+    frame:
+  File "game/script.rpy", line 186, in execute
+    viewport:
+  File "game/script.rpy", line 190, in execute
+    has vbox
+  File "game/script.rpy", line 191, in execute
+    for i in data2T:#["data"]:
+  File "game/script.rpy", line 192, in execute
+    text i["title"]
+  File "<screen language>", line 192, in <module>
+TypeError: string indices must be integers
 
 Windows-8-6.2.9200
 Ren'Py 7.3.2.320
 MySQLTest 1.0
-Sun Aug 11 16:15:08 2019
+Sun Aug 11 18:14:23 2019
