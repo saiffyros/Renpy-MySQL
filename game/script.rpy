@@ -6,8 +6,17 @@ init python:
     import urllib2
     import requests
     import json
-    import urllib2
     import os
+
+    def downloadImage(url):
+        openurl = urllib2.build_opener()
+        page1 = openurl.open(url)
+        pic = page1.read()
+        filename = os.path.join(config.gamedir, ("image1234.png"))    # Might as well just make sure you know the file extension.
+        fout = open(filename, "wb")
+        fout.write(pic)
+        fout.close()
+        SetScreenVariable("downloaded", True)()
 
 label start:
 
@@ -109,33 +118,22 @@ label start:
             resp2 = urllib.urlopen(url2)
             resp = json.loads(resp2.read())
 
+            downloadImage(resp["url"])
+
             title1 = resp["title"]
             explanation1 = resp["explanation"]
 
         except:
-            title1 = "it didn't work"
-            explanation1 = "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+            title1 = "It didn't work"
+            explanation1 = "You might not be connected to the internet. Please check if your connection ir working and try again."
 
     show screen nasaPic
     pause 5.0
-    e "testing"
 
-    #e "Let's try to send an email."
-    #$ emailT = renpy.input("Type the person's email")
-    #e "What is the subject?"
-    #$ subjectT = renpy.input("Type the subject")
-    #e "What is the message?"
-    #$ messageT = renpy.input("Type the message")
-    #e "Ok, I'll try to send."
     e "Well, that's it for today."
     e "I hope you had fun."
     e "Bye"
 
-    return
-
-label finall:
-    e "it didn't work"
-    e "bye"
     return
 
 screen windowTest:
@@ -183,12 +181,13 @@ screen windowTest2:
 
 screen nasaPic:
 
+    add "image1234.png":
+        xalign 0.5
+        yalign 0.5
     text title1:
         xalign 0.5
         yalign 0.2
-    #add "image12344.png":
-        #xalign 0.5
-        #yalign 0.5
+        size 35
     text explanation1:
         xalign 0.5
         yalign 0.6
