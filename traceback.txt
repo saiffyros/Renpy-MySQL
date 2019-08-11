@@ -1,20 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 124, in script
-    e "it didn't work"
-Exception: Possible infinite loop.
+  File "game/script.rpy", line 4, in script
+    init python:
+  File "game/script.rpy", line 7, in <module>
+    import requests
+ImportError: No module named requests
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 124, in script
-    e "it didn't work"
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\execution.py", line 59, in check_infinite_loop
-    raise Exception("Possible infinite loop.")
-Exception: Possible infinite loop.
+  File "game/script.rpy", line 4, in script
+    init python:
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\ast.py", line 912, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\python.py", line 2004, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/script.rpy", line 7, in <module>
+    import requests
+ImportError: No module named requests
 
 Windows-8-6.2.9200
-Ren'Py 7.3.0.271
+Ren'Py 7.3.2.320
 MySQLTest 1.0
-Mon Aug 05 18:47:37 2019
+Sat Aug 10 18:14:47 2019

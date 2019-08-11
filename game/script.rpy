@@ -105,7 +105,8 @@ label start:
 
     python:
         try:
-            resp2 = requests.get("https://api.nasa.gov/planetary/apod?api_key=DKkIVysTrVNs2wj5egA301FCy4fcFn6dM4J7oP0j")
+            url = "https://api.nasa.gov/planetary/apod?api_key=DKkIVysTrVNs2wj5egA301FCy4fcFn6dM4J7oP0j"
+            resp2 = requests.get(url)
             resp = resp2.json()
 
             title1 = resp["title"]
@@ -119,6 +120,7 @@ label start:
             # fout = open(filename, "wb")
             # fout.write(pic)
             # fout.close()
+
         except:
             title1 = "it didn't work"
             explanation1 = "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
@@ -146,13 +148,13 @@ label finall:
     return
 
 screen windowTest:
-    #$ data2 = {'name' : "Rodrigo", 'age' : 15}
     frame:
         python:
             try:
                 #mostra quais astronautas estão na ISS agora
                 people = requests.get('http://api.open-notify.org/astros.json')
                 dataT = people.json()
+                print(people.text)
             except:
                 dataT = {"people": [{"name": "Not connected"}, {"name": "to the internet"}]}
         style "file_picker_frame"
@@ -161,8 +163,8 @@ screen windowTest:
             xmaximum 400
             mousewheel True
             has vbox
-            #busca uma seção do arquivo json e imprime um valor dentro dele, neste caso os nomes dos astronautas
 
+            #busca uma seção do arquivo json e imprime um valor dentro dele, neste caso os nomes dos astronautas
             for i in dataT["people"]:
                 text i["name"]
 
@@ -190,10 +192,6 @@ screen windowTest2:
                 text i["title_short"]
 
 screen nasaPic:
-
-            #ui.close()
-            #renpy.hide_screen("nasaPic")
-            #renpy.jump("finall")
 
     text title1:
         xalign 0.5

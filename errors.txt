@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 190: expected an indented block
-    except:
+File "game/script.rpy", line 159: invalid syntax
+        HTTPError as http_err:
+                    ^
     
 
-Ren'Py Version: Ren'Py 7.3.0.271
-Mon Aug 05 18:49:27 2019
+Ren'Py Version: Ren'Py 7.3.2.320
+Sat Aug 10 17:51:52 2019
