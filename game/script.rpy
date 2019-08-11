@@ -105,21 +105,12 @@ label start:
 
     python:
         try:
-            url = "https://api.nasa.gov/planetary/apod?api_key=DKkIVysTrVNs2wj5egA301FCy4fcFn6dM4J7oP0j"
-            resp2 = requests.get(url)
-            resp = resp2.json()
+            url2 = "https://api.nasa.gov/planetary/apod?api_key=DKkIVysTrVNs2wj5egA301FCy4fcFn6dM4J7oP0j"
+            resp2 = urllib.urlopen(url2)
+            resp = json.loads(resp2.read())
 
             title1 = resp["title"]
             explanation1 = resp["explanation"]
-
-            # url = "https://apod.nasa.gov/apod/image/1908/DoubleEclipse_Legault_1080.jpg"
-            # openurl = urllib2.build_opener()
-            # page1 = openurl.open(url)
-            # pic = page1.read()
-            # filename = os.path.join(config.gamedir, ("image12344.png"))
-            # fout = open(filename, "wb")
-            # fout.write(pic)
-            # fout.close()
 
         except:
             title1 = "it didn't work"
@@ -154,7 +145,6 @@ screen windowTest:
                 #mostra quais astronautas estão na ISS agora
                 people = requests.get('http://api.open-notify.org/astros.json')
                 dataT = people.json()
-                print(people.text)
             except:
                 dataT = {"people": [{"name": "Not connected"}, {"name": "to the internet"}]}
         style "file_picker_frame"

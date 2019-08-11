@@ -1,4 +1,4 @@
-Sat Aug 10 18:50:50 2019
+Sat Aug 10 23:33:00 2019
 Windows-8-6.2.9200
 Ren'Py 7.3.2.320
  
@@ -11,7 +11,7 @@ Loading script took 0.06s
 Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.32s
+Running init code took 0.33s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
@@ -20,16 +20,16 @@ Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.01s
 DPI scale factor: 1.000000
-Creating interface object took 0.04s
+Creating interface object took 0.03s
 Cleaning stores took 0.00s
 Init translation took 0.01s
 Build styles took 0.00s
-Load screen analysis took 0.01s
+Load screen analysis took 0.03s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
 Prepare screens took 0.04s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Save bytecode. took 0.04s
 Running _start took 0.00s
 Interface start took 0.02s
 
@@ -440,22 +440,5 @@ Texture testing:
 - 2048px textures work.
 FBO Maximum Texture Size: 32768
 Root FBO is: 0
-Total time until interface ready: 1.12300014496s
-send: u'GET /message HTTP/1.1\r\nAccept-Encoding: identity\r\nHost: ec2-3-18-214-161.us-east-2.compute.amazonaws.com:3000\r\nConnection: close\r\nUser-Agent: Python-urllib/2.7\r\n\r\n'
-reply: 'HTTP/1.1 200 OK\r\n'
-header: Date: Sat, 10 Aug 2019 21:50:54 GMT
-header: Connection: close
-header: Transfer-Encoding: chunked
-Traceback (most recent call last):
-  File "renpy/common/00console.rpy", line 468, in run
-    renpy.python.py_exec(code)
-  File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\python.py", line 2017, in py_exec
-    exec py_compile(source, 'exec') in store, locals
-  File "<none>", line 1, in <module>
-  File "requests/api.py", line 75, in get
-  File "requests/api.py", line 60, in request
-  File "requests/sessions.py", line 533, in request
-  File "requests/sessions.py", line 646, in send
-  File "requests/adapters.py", line 416, in send
-  File "requests/adapters.py", line 228, in cert_verify
-IOError: Could not find a suitable TLS CA certificate bundle, invalid path: C:\Users\rodri\Desktop\renpy-7.2.2-sdk\cacert.pem
+Total time until interface ready: 1.20299983025s
+send: u'GET
