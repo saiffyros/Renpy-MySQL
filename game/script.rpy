@@ -12,11 +12,10 @@ init python:
         openurl = urllib2.build_opener()
         page1 = openurl.open(url)
         pic = page1.read()
-        filename = os.path.join(config.gamedir, (imageName))    # Might as well just make sure you know the file extension.
+        filename = os.path.join(config.gamedir + "/images", (imageName))
         fout = open(filename, "wb")
         fout.write(pic)
         fout.close()
-        SetScreenVariable("downloaded", True)()
 
 label start:
 
@@ -101,14 +100,18 @@ label start:
     e "Here they are, if you're connected."
     hide screen windowTest
     e "Let's try one more."
-    e "Do you like music?"
-    e "Tell me the name of your favorite artist."
-    $ Murl = renpy.input("type the name of the artist/band")
-    show screen windowTest2
-    pause 5.0
-    e "Here are the songs."
-    e "I hope it worked."
-    hide screen windowTest2
+    menu:
+        "Check music with Deezer":
+            e "Do you like music?"
+            e "Tell me the name of your favorite artist."
+            $ Murl = renpy.input("type the name of the artist/band")
+            show screen windowTest2
+            pause 5.0
+            e "Here are the songs."
+            e "I hope it worked."
+            hide screen windowTest2
+        "Ignore music":
+            e "Ok, skipping"
     e "Last test now."
     e "Let's try and connect to NASA once again."
 

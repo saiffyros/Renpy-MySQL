@@ -1,16 +1,16 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <'Image' u'image12344.png'>:
-  File "game/script.rpy", line 132, in script
+While loading <'Image' u'image1234.png'>:
+  File "game/script.rpy", line 130, in script
     pause 5.0
   File "renpy/common/000statements.rpy", line 414, in execute_pause
     renpy.with_statement(Pause(delay))
-IOError: Couldn't find file 'image12344.png'.
+IOError: Couldn't find file 'image1234.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 132, in script
+  File "game/script.rpy", line 130, in script
     pause 5.0
   File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\ast.py", line 1947, in execute
     self.call("execute")
@@ -68,9 +68,9 @@ Full traceback:
     surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
   File "C:\Users\rodri\Desktop\renpy-7.2.2-sdk\renpy\loader.py", line 576, in load
     raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'image12344.png'.
+IOError: Couldn't find file 'image1234.png'.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.2.320
 MySQLTest 1.0
-Sat Aug 10 23:52:24 2019
+Sun Aug 11 16:15:08 2019
