@@ -181,9 +181,10 @@ screen windowTest2:
 
 screen nasaPic:
 
-    add "image1234.png":
-        xalign 0.5
-        yalign 0.5
+    if len(explanation1) > 120:
+        add "image1234.png":
+            xalign 0.5
+            yalign 0.5
     text title1:
         xalign 0.5
         yalign 0.2
