@@ -22,17 +22,21 @@ label start:
     $ data2 = "test"
 
     scene bg room
+    #
+    # show test1:
+    #     xalign .5
+    #     yalign .2
 
-    e "Do you wanna log into your account?"
+    e "Quer logar na sua conta?"
 
     menu:
-        "Try your email":
+        "Testar o email":
             python:
                 email = renpy.input("type in email")
                 password = renpy.input("type in password")
 
-            e "your email is [email]"
-            e "your password is [password]"
+            e "Seu email é [email]"
+            e "Seu password é [password]"
 
             python:
 
@@ -42,7 +46,7 @@ label start:
                         self.error = error
                         self.email = email
 
-                url = "http://ec2-3-18-214-161.us-east-2.compute.amazonaws.com/action_login.php"
+                url = "http://triviumpage.brazilsouth.cloudapp.azure.com/action_login.php"
                 opener = urllib2.build_opener(urllib2.HTTPHandler(debuglevel=1))
                 data = urllib.urlencode({'email' : email,'password' : password})
                 userList = str(opener.open(url, data=data).read()).split(",")
@@ -60,64 +64,71 @@ label start:
                 if len(y["error"]) > 1:
                     renpy.jump("start")
 
-        "Ignore it":
+        "Ignore por enquanto":
             "ok"
 
     show eileen happy
 
-    e "Ok, Let's check your connection."
-    e "Make sure you're connect to the wifi or mobile data."
+    e "Vamos testar sua conexão"
+    menu:
+        "Sim":
 
-    python:
-        try:
-            url = "http://ec2-3-18-214-161.us-east-2.compute.amazonaws.com:3000/message"
-            opener = urllib2.build_opener(urllib2.HTTPHandler(debuglevel=1))
+            e "Certifique-se de que você está conectado a internet"
 
-            userList2 = str(opener.open(url).read())
+            python:
+                try:
+                    url = "http://triviumpage.brazilsouth.cloudapp.azure.com:8080/test"
+                    opener = urllib2.build_opener(urllib2.HTTPHandler(debuglevel=1))
 
-        except:
-            userList2 = "We couldn't connect to the internet."
+                    userList2 = str(opener.open(url).read())
 
-    e "[userList2]"
+                except:
+                    userList2 = "Nós não conseguimos te conectar a internet."
 
-    e "Let's try the Requests module now."
+            e "[userList2]"
 
-    python:
-        try:
-            url = "http://ec2-3-18-214-161.us-east-2.compute.amazonaws.com:3000/message"
-            data = requests.get(url)
-        except:
-            data = "Connection failed."
+            e "Vamos testar o módulo Requests agora."
 
-    e "Let's see:"
-    e "[data]"
-    e "Let's try an API now."
-    e "Let's see who's working on the ISS now"
-    e "Let me try to connect to NASA"
+            python:
+                try:
+                    url = "http://triviumpage.brazilsouth.cloudapp.azure.com:8080/test"
+                    data = requests.get(url)
+                except:
+                    data = "Conexão falhou."
+
+            e "Vamos ver:"
+            e "[data]"
+
+        "Não":
+            e "Ok"
+
+    e "Vamos tentar conectar a uma API agora."
+    e "Vamos ver quem são os astrontautas a bordo da estação espacial neste momento usando a API da NASA."
+    e "Conectando a NASA"
 
     show screen windowTest
     pause 5.0
-    e "Here they are, if you're connected."
+    e "Se sua conexão estiver funcionando, aqui estão eles:"
     hide screen windowTest
-    e "Let's try one more."
+    e "Vamos testar mais uma API."
     menu:
-        "Check music with Deezer":
-            e "Do you like music?"
-            e "Tell me the name of your favorite artist."
-            $ Murl = renpy.input("type the name of the artist/band")
+        "Você gosta de música?":
+            e "Você gosta de música?"
+            e "Digite o seu artista favorito"
+            $ Murl = renpy.input("digite o nome do artista/banda")
             show screen windowTest2
             pause 5.0
-            e "Here are the songs."
-            e "I hope it worked."
+            e "Aqui estão as músicas que encontrei!"
+            e "Espero que tenha funcionado."
             hide screen windowTest2
-        "Ignore music":
-            e "Ok, skipping"
-    e "Last test now."
-    e "Let's try and connect to NASA once again."
+        "Ignore a musica por enquanto":
+            e "Ok, pulando"
+    e "Último teste agora"
+    e "Vou me conectar a NASA novamente"
 
     python:
         try:
-            url2 = "https://api.nasa.gov/planetary/apod?api_key=DKkIVysTrVNs2wj5egA301FCy4fcFn6dM4J7oP0j"
+            url2 = "https://api.nasa.gov/planetary/apod?api_key=ZPtIOYfr4syaqB6Koum0jYAvXMxcVaTZyecD9V5q"
             resp2 = urllib.urlopen(url2)
             resp = json.loads(resp2.read())
 
@@ -127,15 +138,23 @@ label start:
             explanation1 = resp["explanation"]
 
         except:
-            title1 = "It didn't work"
-            explanation1 = "You might not be connected to the internet. Please check if your connection ir working and try again."
+
+            url2 = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2017-07-12"
+            resp2 = urllib.urlopen(url2)
+            resp = json.loads(resp2.read())
+
+            downloadImage(resp["url"], "image1234.png")
+
+            title1 = resp["title"]
+            explanation1 = resp["explanation"]
 
     show screen nasaPic
     pause 5.0
 
-    e "Well, that's it for today."
-    e "I hope you had fun."
-    e "Bye"
+    e "Aqui a imagem do dia da NASA."
+    e "Bom, por hoje era isso"
+    e "Espero que tenha se divertido!"
+    e "Tchau"
 
     return
 
@@ -196,10 +215,10 @@ screen nasaPic:
         add "image1234.png":
             xalign 0.5
             yalign 0.5
-    text title1:
-        xalign 0.5
-        yalign 0.2
-        size 35
-    text explanation1:
-        xalign 0.5
-        yalign 0.6
+        text title1:
+            xalign 0.5
+            yalign 0.2
+            size 35
+        text explanation1:
+            xalign 0.5
+            yalign 0.6

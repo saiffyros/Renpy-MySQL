@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 159: invalid syntax
-        HTTPError as http_err:
-                    ^
-    
+File "game/script.rpy", line 102: choice menuitem expects a non-empty block.
+    "Não":
+          ^
 
-Ren'Py Version: Ren'Py 7.3.2.320
-Sat Aug 10 17:51:52 2019
+Ren'Py Version: Ren'Py 7.3.5.606
+Wed Oct 21 21:00:09 2020

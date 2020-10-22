@@ -1,17 +1,17 @@
-Sun Aug 11 18:15:54 2019
+Wed Oct 21 21:10:55 2020
 Windows-8-6.2.9200
-Ren'Py 7.3.2.320
+Ren'Py 7.3.5.606
  
 
-Bootstrap to the start of init.init took 0.04s
+Bootstrap to the start of init.init took 0.05s
 Early init took 0.00s
-Loader init took 0.02s
+Loader init took 0.01s
 Loading error handling took 0.01s
-Loading script took 0.11s
+Loading script took 0.10s
 Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.33s
+Running init code took 0.31s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
@@ -21,7 +21,7 @@ Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.01s
 DPI scale factor: 1.000000
-Creating interface object took 0.03s
+Creating interface object took 0.06s
 Cleaning stores took 0.00s
 Init translation took 0.01s
 Build styles took 0.00s
@@ -40,8 +40,8 @@ Windowed mode.
 Screen sizes: virtual=(1280, 720) physical=(1184, 666) drawable=(1184, 666)
 Vendor: 'NVIDIA Corporation'
 Renderer: 'GeForce GTX 1060 6GB/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 431.60'
-Display Info: <Info({'blit_sw_CC': False, 'refresh_rate': 60, 'bitsize': 32, 'wm': True, 'losses': (0, 0, 0, 8), 'hw': False, 'masks': (16711680L, 65280L, 255L, 0L), 'current_h': 768, 'current_w': 1366, 'shifts': (16, 8, 0, 0), 'blit_sw_A': False, 'blit_hw': False, 'blit_sw': False, 'bytesize': 4, 'blit_hw_CC': False, 'blit_hw_A': False, 'video_mem': 268435456})>
+Version: '4.6.0 NVIDIA 456.71'
+Display Info: None
 Fixed-function is blacklisted.
 Extensions:
     
@@ -246,6 +246,8 @@ Extensions:
     GL_EXT_memory_object
     GL_EXT_memory_object_win32
     GL_EXT_multi_draw_arrays
+    GL_EXT_multiview_texture_multisample
+    GL_EXT_multiview_timer_query
     GL_EXT_packed_depth_stencil
     GL_EXT_packed_float
     GL_EXT_packed_pixels
@@ -290,6 +292,7 @@ Extensions:
     GL_EXT_texture_sRGB
     GL_EXT_texture_sRGB_R8
     GL_EXT_texture_sRGB_decode
+    GL_EXT_texture_shadow_lod
     GL_EXT_texture_shared_exponent
     GL_EXT_texture_storage
     GL_EXT_texture_swizzle
@@ -310,12 +313,16 @@ Extensions:
     GL_KHR_parallel_shader_compile
     GL_KHR_robust_buffer_access_behavior
     GL_KHR_robustness
+    GL_KHR_shader_subgroup
     GL_KTX_buffer_region
     GL_NVX_blend_equation_advanced_multi_draw_buffers
     GL_NVX_conditional_render
     GL_NVX_gpu_memory_info
+    GL_NVX_gpu_multicast2
+    GL_NVX_linked_gpu_multicast
     GL_NVX_multigpu_info
     GL_NVX_nvenc_interop
+    GL_NVX_progress_fence
     GL_NV_ES1_1_compatibility
     GL_NV_ES3_1_compatibility
     GL_NV_alpha_to_coverage_dither_control
@@ -354,6 +361,7 @@ Extensions:
     GL_NV_framebuffer_multisample_coverage
     GL_NV_geometry_shader4
     GL_NV_geometry_shader_passthrough
+    GL_NV_gpu_multicast
     GL_NV_gpu_program4
     GL_NV_gpu_program4_1
     GL_NV_gpu_program5
@@ -388,6 +396,7 @@ Extensions:
     GL_NV_shader_atomic_int64
     GL_NV_shader_buffer_load
     GL_NV_shader_storage_buffer_object
+    GL_NV_shader_subgroup_partitioned
     GL_NV_shader_thread_group
     GL_NV_shader_thread_shuffle
     GL_NV_stereo_view_rendering
@@ -428,8 +437,8 @@ Extensions:
 Number of texture units: 4
 Using shader environment.
 Using FBO RTT.
-FBO Maximum Texture Size: 32768
 Root FBO is: 0
+FBO Maximum Texture Size: 2048
 Using gl renderer.
 Texture testing:
 - Hardware max texture size: 32768
@@ -439,14 +448,9 @@ Texture testing:
 - 512px textures work.
 - 1024px textures work.
 - 2048px textures work.
-FBO Maximum Texture Size: 32768
 Root FBO is: 0
-Total time until interface ready: 1.40499997139s
-send: u'GET /message HTTP/1.1\r\nAccept-Encoding: identity\r\nHost: ec2-3-18-214-161.us-east-2.compute.amazonaws.com:3000\r\nConnection: close\r\nUser-Agent: Python-urllib/2.7\r\n\r\n'
-reply: 'HTTP/1.1 200 OK\r\n'
-header: Date: Sun, 11 Aug 2019 21:16:00 GMT
-header: Connection: close
-header: Transfer-Encoding: chunked
+FBO Maximum Texture Size: 2048
+Total time until interface ready: 1.18099999428s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
