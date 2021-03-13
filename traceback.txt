@@ -1,28 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 85, in script
-    e "[userList2]"
-Exception: The displayable with id 'what' was not given the exact contents of the what variable given to the say screen.
+  File "game/script.rpy", line 129, in script
+    python:
+  File "game/script.rpy", line 143, in <module>
+    resp2 = urllib.urlopen(url2)
+IOError: [Errno socket error] [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:727)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 85, in script
-    e "[userList2]"
-  File "E:\Downloads 2\renpy-7.3.5-sdk\renpy\ast.py", line 708, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "E:\Downloads 2\renpy-7.3.5-sdk\renpy\exports.py", line 1345, in say
-    who(what, *args, **kwargs)
-  File "E:\Downloads 2\renpy-7.3.5-sdk\renpy\character.py", line 1142, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, **display_args)
-  File "E:\Downloads 2\renpy-7.3.5-sdk\renpy\character.py", line 842, in do_display
-    **display_args)
-  File "E:\Downloads 2\renpy-7.3.5-sdk\renpy\character.py", line 575, in display_say
-    raise Exception("The displayable with id 'what' was not given the exact contents of the what variable given to the say screen.")
-Exception: The displayable with id 'what' was not given the exact contents of the what variable given to the say screen.
+  File "game/script.rpy", line 129, in script
+    python:
+  File "renpy/ast.py", line 922, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2218, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 143, in <module>
+    resp2 = urllib.urlopen(url2)
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/urllib.py", line 87, in urlopen
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/urllib.py", line 215, in open
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/urllib.py", line 445, in open_https
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/httplib.py", line 1078, in endheaders
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/httplib.py", line 894, in _send_output
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/httplib.py", line 856, in send
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/httplib.py", line 1303, in connect
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/ssl.py", line 369, in wrap_socket
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/ssl.py", line 599, in __init__
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/ssl.py", line 828, in do_handshake
+IOError: [Errno socket error] [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:727)
 
-Windows-8-6.2.9200
-Ren'Py 7.3.5.606
+Windows-10-10.0.19041
+Ren'Py 7.4.2.1292
 MySQLTest 1.0
-Wed Oct 21 20:59:04 2020
+Fri Mar 12 23:28:25 2021

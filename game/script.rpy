@@ -182,21 +182,21 @@ screen windowTest2:
     frame:
         python:
             try:
-                # testing = requests.get("http://api.deezer.com/artist/" + Murl)
-                # testingData = testing.json()
-                # idd = testingData["id"]
-                #
-                # urlM = "http://api.deezer.com//artist//" + str(idd) + "//top?limit=50"
-                #
-                # musicT = requests.get(urlM)
-                #
-                # data2T = musicT.json()
+                testing = requests.get("http://api.deezer.com/artist/" + Murl)
+                testingData = testing.json()
+                idd = testingData["id"]
 
-                url = "https://api.deezer.com/search?q=" + Murl
-                testingData = urllib.urlopen(url)
-                testingData2 = testingData.read()
+                urlM = "http://api.deezer.com//artist//" + str(idd) + "//top?limit=50"
 
-                data2T = json.loads(testingData2)
+                musicT = requests.get(urlM)
+
+                data2T = musicT.json()
+
+                #url = "https://api.deezer.com/search?q=" + Murl
+                #testingData = urllib.urlopen(url)
+                #testingData2 = testingData.read()
+
+                #data2T = json.loads(testingData2)
 
             except:
                 data2T = {"data": [{"title_short": "Not connected"}, {"title_short": "to the internet"}]}

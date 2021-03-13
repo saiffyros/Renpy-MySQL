@@ -1,48 +1,48 @@
-Wed Oct 21 21:10:55 2020
-Windows-8-6.2.9200
-Ren'Py 7.3.5.606
+Fri Mar 12 23:26:15 2021
+Windows-10-10.0.19041
+Ren'Py 7.4.2.1292
  
 
 Bootstrap to the start of init.init took 0.05s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.01s
-Loading script took 0.10s
+Loading script took 0.13s
 Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.31s
-Loading analysis data took 0.02s
+Running init code took 0.27s
+Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\rodri\\AppData\\Roaming/RenPy/backups\\MySQLTest':
-Dump and make backups. took 0.04s
+Dump and make backups. took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.01s
+Initial gc. took 0.02s
 DPI scale factor: 1.000000
-Creating interface object took 0.06s
+Creating interface object took 0.00s
 Cleaning stores took 0.00s
-Init translation took 0.01s
+Init translation took 0.03s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
-Save screen analysis took 0.04s
+Save screen analysis took 0.06s
 Prepare screens took 0.04s
-Save pyanalysis. took 0.09s
-Save bytecode. took 0.04s
+Save pyanalysis. took 0.06s
+Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.02s
+Interface start took 0.08s
 
+Initializing gl renderer:
 primary display bounds: (0, 0, 1366, 768)
 swap interval: 1 frames
+Using GL DLL.
 Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(1184, 666) drawable=(1184, 666)
 Vendor: 'NVIDIA Corporation'
 Renderer: 'GeForce GTX 1060 6GB/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 456.71'
+Version: '4.6.0 NVIDIA 461.72'
 Display Info: None
-Fixed-function is blacklisted.
 Extensions:
     
     GL_AMD_multi_draw_indirect
@@ -372,6 +372,7 @@ Extensions:
     GL_NV_internalformat_sample_query
     GL_NV_light_max_exponent
     GL_NV_memory_attachment
+    GL_NV_memory_object_sparse
     GL_NV_multisample_coverage
     GL_NV_multisample_filter_hint
     GL_NV_occlusion_query
@@ -410,6 +411,7 @@ Extensions:
     GL_NV_texture_shader
     GL_NV_texture_shader2
     GL_NV_texture_shader3
+    GL_NV_timeline_semaphore
     GL_NV_transform_feedback
     GL_NV_transform_feedback2
     GL_NV_uniform_buffer_unified_memory
@@ -434,7 +436,7 @@ Extensions:
     GL_SUN_slice_accum
     GL_WIN_swap_hint
     WGL_EXT_swap_control
-Number of texture units: 4
+Number of texture units: 32
 Using shader environment.
 Using FBO RTT.
 Root FBO is: 0
@@ -448,13 +450,35 @@ Texture testing:
 - 512px textures work.
 - 1024px textures work.
 - 2048px textures work.
+Screen sizes: virtual=(1280, 720) physical=(1184, 666) drawable=(1184, 666)
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 1.18099999428s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.03s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
+Total time until interface ready: 1.10999798775s
+
+Full traceback:
+  File "game/script.rpy", line 129, in script
+    python:
+  File "renpy/ast.py", line 922, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2218, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 143, in <module>
+    resp2 = urllib.urlopen(url2)
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/urllib.py", line 87, in urlopen
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/urllib.py", line 215, in open
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/urllib.py", line 445, in open_https
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/httplib.py", line 1078, in endheaders
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/httplib.py", line 894, in _send_output
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/httplib.py", line 856, in send
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/httplib.py", line 1303, in connect
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/ssl.py", line 369, in wrap_socket
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/ssl.py", line 599, in __init__
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/ssl.py", line 828, in do_handshake
+IOError: [Errno socket error] [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:727)
+
+While running game code:
+  File "game/script.rpy", line 129, in script
+    python:
+  File "game/script.rpy", line 143, in <module>
+    resp2 = urllib.urlopen(url2)
+IOError: [Errno socket error] [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:727)
